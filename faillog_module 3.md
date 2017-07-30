@@ -14,7 +14,7 @@
  + tried a few searches ('Burnet,' 'Allen') and got results - including the line mentioned in the workbook as having an extra comma - apparently there are no lines with extra commas in this version?
   + Thinking I may have gotten the regex wrong, I started going to a backup by renaming index.txt to index_oops.txt, then making a new index.txt
   + then I double-checked with Dr. Graham's regex - mine was the right command, and line 178 definitely has 3 commas, so the problem is with my grep command, not my sed commands. I turned index_oops.txt back into index.txt and posted on slack about grep.\
-+ redid the exercise in Cygwin and got `grep -E ".+,.+,.+," index.txt to return results :) 
++ redid the exercise in Cygwin and got `grep -E ".+,.+,.+,"` index.txt to return results :) 
 + used ^W in nano to find and correct 13 lines of text.
 + made new command history and saved as module3exercise1_commands_cygwin.md.
 + uploaded module3exercise1_commands.cygwin.md and cleaned-correspondence.csv to github repo /hist3814o_module3/.
@@ -42,12 +42,12 @@
 + could I find all instances of dates WITHIN ARTICLES and use those to examine what kinds of events happened?
  + first must remove all non-article material (eg headers containing dates of publication)
  + could I extract the words AROUND each date, then use that to find what kinds of events were run? extract each LINE with a DAY in it? (sunday, monday, tuesday...)
- + went thru Equity for 2 January 1890 using `[A-Za-z]*day` regex  (note: not perfect - returns results for "today" and "holiday", etc; because I'm just playing around manually right now I just skip past those results - if I were to sed or grep something, I'd need to be more specific) and put in experimental XML tags: <event>, <eventDate>, and <location> for each social gathering referred to by day of event
+ + went thru Equity for 2 January 1890 using `[A-Za-z]*day` regex  (note: not perfect - returns results for "today" and "holiday", etc; because I'm just playing around manually right now I just skip past those results - if I were to sed or grep something, I'd need to be more specific) and put in experimental XML tags: `<event>`, `<eventDate>`, and `<location>` for each social gathering referred to by day of event
   + could I later use these XML tags to create a csv like so: event, date, location, date of mention in Equity???
    + OOH!
 + I refer to my final project github repo to check what my ideas actually were...
  + hyperlinking: could I look for repeated words/events & hyperlink them together?
-  + what (larger historical argument)[] could this serve?
+  + what [larger historical argument](http://scottbot.net/argument-clinic/) could this serve?
 + started adding `<div>`, `<dateline>` and `<p>` tags to 2 Jan 1890 issue (according to [TEI guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html)). Realized that this is a lot of work, and I probably won't be data mining this version of the text as DHbox still isn't up, so I stop a few stories in.
  + it's almost impossible to `<div>` some of these (eg the OCR for 9 January 1890) properly because of the way the OCR read the text across columns.... great.
  + looking into downloading Cygwin so I can do some greping and seding on my Windows machine. Good idea or no...?
